@@ -17,6 +17,7 @@ df = df.drop(['Name','PassengerId','SibSp','Parch','Ticket'],axis=1)
 features = df.drop(['Survived'],axis=1)
 target = df['Survived']
 
+features.Age = features.Age.fillna(features.Age.mean())
 #print(target.head())
 
 le_sex = LabelEncoder()
